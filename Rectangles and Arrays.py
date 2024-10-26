@@ -25,10 +25,11 @@ def main():
     
     # Calculate the maximum area with one modification
     for i in range(N):
-        original_value = A[i]
-        A[i] = X
-        max_area = max(max_area, largest_rectangle_area(A))
-        A[i] = original_value
+        if A[i] != X:
+            original_value = A[i]
+            A[i] = X
+            max_area = max(max_area, largest_rectangle_area(A))
+            A[i] = original_value
     
     print(max_area)
 
